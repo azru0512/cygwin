@@ -1,0 +1,19 @@
+NAME="hidapi"
+VERSION=0.8.0-rc1
+RELEASE=1
+CATEGORY="Libs"
+SUMMARY="USB HID library"
+DESCRIPTION="C Library for USB/Bluetooth HID device access from Linux, Mac OS X, FreeBSD, and Windows."
+HOMEPAGE="http://www.signal11.us/oss/hidapi/"
+SRC_URI="https://github.com/signal11/hidapi/archive/hidapi-${VERSION}/hidapi-hidapi-${VERSION}.tar.gz"
+SRC_DIR="hidapi-hidapi-${VERSION}"
+
+PATCH_URI="
+https://github.com/signal11/hidapi/commit/627f3aa478e8099e3660d6a429f1584eeca0724c.patch
+https://github.com/signal11/hidapi/commit/171a521b91add62c19343100df62b15ecd8f3216.patch
+https://github.com/signal11/hidapi/commit/54eb31dc16dcc67d0b689ed947bc53a038608c0e.patch
+"
+
+PKG_NAMES="libhidapi0 libhidapi-devel"
+libhidapi0_CONTENTS="usr/bin/cyghidapi-0.dll usr/share/doc/"
+libhidapi_devel_CONTENTS="usr/include/ usr/lib/libhidapi.dll.a usr/lib/pkgconfig/"
